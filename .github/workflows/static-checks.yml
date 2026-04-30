@@ -1,0 +1,78 @@
+name: Static Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  static-checks:
+    name: Validate static site files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Confirm required files exist
+        run: |
+          test -f index.html
+          test -f team.html
+          test -f funding.html
+          test -f apply.html
+          test -f partner.html
+          test -f css/tokens.css
+          test -f css/components.css
+          test -f css/styles.css
+          test -f css/pages.css
+          test -f css/motion.css
+          test -f js/store.js
+          test -f js/render.js
+          test -f js/main.js
+          test -f js/effects.js
+          test -f data/site.json
+          test -f data/sections.json
+          test -f vercel.json
+          test -f README.md
+          test -f AGENTS.md
+          test -f COMPLIANCE.md
+
+      - name: Confirm key internal links exist
+        run: |
+          grep -q 'href="team.html"' index.html
+          grep -q 'href="funding.html"' index.html
+          grep -q 'href="apply.html"' index.html
+          grep -q 'href="partner.html"' index.html
+          grep -q 'href="partner.html"' funding.html
+          grep -q 'href="partner.html"' apply.html
+
+      - name: Confirm Tally embeds exist
+        run: |
+          grep -q 'tally.so/embed/w4R2Ad' apply.html
+          grep -q 'tally.so/embed/mOe658' partner.html
+
+      - name: Confirm branded redirect exists
+        run: |
+          grep -q '"source": "/go/funding-application"' vercel.json
+          grep -q 'https://bit.ly/fundingwithdarwin' vercel.json
+
+      - name: Confirm compliance disclaimer exists
+        run: |
+          grep -q 'K & J Industries is not a lender' index.html
+          grep -q 'K & J Industries is not a lender' apply.html
+          grep -q 'K & J Industries is not a lender' partner.html
+          grep -q 'does not guarantee approvals' COMPLIANCE.md
+
+      - name: Prevent stale partner mailto CTA pattern
+        run: |
+          if grep -R 'Become a Partner.*mailto:' *.html; then
+            echo 'Found a stale Become a Partner mailto CTA. Use partner.html instead.'
+            exit 1
+          fi
+
+      - name: Confirm no framework build files were added
+        run: |
+          test ! -f package.json
+          test ! -f next.config.js
+          test ! -f vite.config.js
