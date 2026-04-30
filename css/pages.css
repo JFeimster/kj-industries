@@ -308,6 +308,19 @@
   color: var(--color-parchment-soft);
 }
 
+.tally-embed-card {
+  padding: clamp(1.1rem, 3vw, 1.45rem);
+}
+
+.tally-embed-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 620px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: rgba(8, 8, 7, 0.3);
+}
+
 @media (max-width: 940px) {
   .page-hero-grid,
   .split-grid,
