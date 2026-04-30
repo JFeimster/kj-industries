@@ -72,33 +72,54 @@
     });
   }
 
-  async function init() {
+  function setCurrentYear() {
+    document.querySelectorAll("[data-current-year]").forEach((element) => {
+      element.textContent = new Date().getFullYear();
+    });
+  }
+
+  function showJsonPreviewError(error) {
+    console.error(error);
+
+    const main = document.querySelector("#main");
+    if (main) {
+      main.insertAdjacentHTML("afterbegin", `
+        <section class="section">
+          <div class="container">
+            <div class="card bento-card">
+              <p class="eyebrow">Preview error</p>
+              <h1>Content could not load.</h1>
+              <p>Please run this site through a local server instead of opening index.html directly. Try: <code>python3 -m http.server 8080</code></p>
+            </div>
+          </div>
+        </section>
+      `);
+    }
+  }
+
+  async function maybeRenderJsonHomepage() {
+    const needsJsonRender = document.querySelector("[data-render]") || document.querySelector("[data-brand-name]");
+    if (!needsJsonRender) return;
+
+    if (!window.KJStore || !window.KJRender) {
+      return;
+    }
+
     try {
       const payload = await window.KJStore.load();
       window.KJRender.renderAll(payload);
-
-      setupNav();
-      setupHeaderScroll();
-      setupReveal();
-      setupFaq();
     } catch (error) {
-      console.error(error);
-
-      const main = document.querySelector("#main");
-      if (main) {
-        main.insertAdjacentHTML("afterbegin", `
-          <section class="section">
-            <div class="container">
-              <div class="card bento-card">
-                <p class="eyebrow">Preview error</p>
-                <h1>Content could not load.</h1>
-                <p>Please run this site through a local server instead of opening index.html directly. Try: <code>python3 -m http.server 8080</code></p>
-              </div>
-            </div>
-          </section>
-        `);
-      }
+      showJsonPreviewError(error);
     }
+  }
+
+  async function init() {
+    await maybeRenderJsonHomepage();
+    setupNav();
+    setupHeaderScroll();
+    setupReveal();
+    setupFaq();
+    setCurrentYear();
   }
 
   document.addEventListener("DOMContentLoaded", init);
