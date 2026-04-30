@@ -1,52 +1,107 @@
-# K & J Industries Static Landing Page
+# K & J Industries Static Site
 
-A zero-build static landing page for **K & J Industries**, a family-led funding access agency.
+A zero-build static website for **K & J Industries**, a family-led funding access agency helping business owners start clearer funding conversations through trusted funding partners.
 
-This is intentionally lightweight: vanilla HTML, CSS, JavaScript, local JSON content, no external libraries, no external fonts, and no framework build step.
+This repo is intentionally simple: vanilla HTML, CSS, JavaScript, local JSON, embedded Tally forms, and Vercel static hosting. No framework. No bundler. No build step. No package manager required. Tiny site, sharp suit. 🥃
 
-## Project Structure
+## Live Site
 
 ```text
-index.html
-css/tokens.css
-css/components.css
-css/styles.css
-js/store.js
-js/render.js
-js/main.js
-data/site.json
-data/sections.json
-vercel.json
-README.md
+https://kj-industries.vercel.app/
 ```
 
-## Fastest Visual Preview
+## Current Pages
 
-Do not open `index.html` directly in the browser. The page uses `fetch()` to load local JSON files from `/data`, so it needs a local server.
+```text
+index.html      Homepage / credibility + path selection
+team.html       Family-led team / founder credibility
+funding.html    Funding access lanes and audience grid
+apply.html      Business funding intake with embedded Tally form
+partner.html    Partner recruitment page with embedded Tally form
+```
 
-### Option 1: Python
+## Current Data + Config Files
 
-From the project root:
+```text
+data/site.json       Brand, SEO, CTA, hero, disclaimer, homepage metric data
+data/sections.json   JSON-rendered homepage sections
+vercel.json          Static Vercel config, redirects, headers
+```
+
+## Current CSS / JS Files
+
+```text
+css/tokens.css       Design tokens: colors, type scale, radii, shadows
+css/components.css   Shared UI components
+css/styles.css       Core page layout and homepage styles
+css/pages.css        Multi-page styles, form layouts, partner/funding sections
+css/motion.css       Premium motion layer: shimmer, spotlight, progress bar
+
+js/store.js          Loads local JSON content
+js/render.js         Renders homepage JSON sections
+js/main.js           Nav, FAQ, reveal behavior, shared page logic
+js/effects.js        Scroll progress, page loaded state, spotlight effects
+```
+
+## Key CTAs
+
+### Funding application
+
+Primary branded path:
+
+```text
+/go/funding-application
+```
+
+Current redirect destination:
+
+```text
+https://bit.ly/fundingwithdarwin
+```
+
+The `apply.html` page also embeds the funding Tally form:
+
+```text
+https://tally.so/embed/w4R2Ad
+```
+
+### Partner application
+
+Partner page:
+
+```text
+/partner
+```
+
+Partner Tally form:
+
+```text
+https://tally.so/embed/mOe658
+```
+
+## Local Preview
+
+Do **not** open `index.html` directly. The homepage uses `fetch()` to load JSON from `/data`, so it needs a local server.
+
+### Python
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open:
+Open:
 
 ```text
 http://localhost:8080
 ```
 
-On some Windows machines, use:
+On some Windows machines:
 
 ```bash
 python -m http.server 8080
 ```
 
-### Option 2: Node
-
-From the project root:
+### Node
 
 ```bash
 npx serve .
@@ -54,122 +109,171 @@ npx serve .
 
 Then open the local URL shown in the terminal.
 
-## Editing Copy and Content
+## Vercel Deployment
 
-Most content lives in:
+Recommended Vercel settings:
+
+```text
+Framework preset: Other / No Framework
+Build command: blank
+Install command: blank
+Output directory: blank or root
+```
+
+This repo has no `package.json` because it does not need one.
+
+## Editing Copy
+
+### Homepage brand / hero / CTA
+
+Edit:
 
 ```text
 data/site.json
-data/sections.json
 ```
 
-Edit `data/site.json` for:
+Use this for:
 
 - Brand name
 - Tagline
 - SEO title and description
-- CTA label
-- CTA mailto URL
-- Hero copy
+- Primary CTA label and URL
+- Hero eyebrow, title, subtitle, note
+- Homepage metric cards
 - Footer disclaimer
 
-Edit `data/sections.json` for:
+### Homepage JSON-rendered sections
 
-- Snapshot section
-- Services
-- Process steps
+Edit:
+
+```text
+data/sections.json
+```
+
+Use this for:
+
+- Funding access snapshot
+- Services cards
+- Process section
 - Professional standards
 - Family-led agency section
 - FAQ
 - Final CTA
 
+### Static page copy
+
+Edit the matching HTML file directly:
+
+```text
+team.html
+funding.html
+apply.html
+partner.html
+```
+
 ## Editing Visual Design
 
-Design tokens live in:
+Start with tokens:
 
 ```text
 css/tokens.css
 ```
 
-Use this file to edit:
-
-- Primary gold accent
-- Background colors
-- Parchment/off-white tones
-- Border colors
-- Font stacks
-- Border radii
-- Shadows
-- Responsive text sizing
-
-Component-level design lives in:
+Then adjust page-specific sections in:
 
 ```text
-css/components.css
-css/styles.css
+css/pages.css
 ```
 
-## Deployment: GitHub to Vercel Static Project
-
-1. Create a new GitHub repository.
-2. Add all files from this repo.
-3. Push to GitHub.
-4. In Vercel, choose **Add New Project**.
-5. Import the GitHub repo.
-6. Framework preset: **Other** or **No Framework**.
-7. Build command: leave blank.
-8. Output directory: leave blank or use root `/`.
-9. Install command: leave blank.
-10. Deploy.
-
-This is a static project. There is no package manager requirement and no build step.
-
-## CTA Setup
-
-Current placeholder CTA:
+Motion and premium interaction polish lives in:
 
 ```text
-hello@kjindustriesfunding.com
+css/motion.css
+js/effects.js
 ```
 
-Current CTA URL:
+Keep motion respectful. The site should feel premium, not like a casino app having a panic attack.
+
+## Recommended Future Site Files / Pages
+
+High-value additions:
 
 ```text
-mailto:hello@kjindustriesfunding.com?subject=Funding%20Conversation%20with%20K%20%26%20J%20Industries
+about.html          Deeper story, standards, and role clarity
+resources.html      Funding readiness resources and checklists
+faq.html            Expanded FAQ for applicants and partners
+goals.html          Funding readiness / amount-planning explainer
+thank-you.html      Post-form or redirect confirmation page
+privacy.html        Basic privacy policy placeholder
+terms.html          Basic terms / usage disclaimer
 ```
 
-Change this in:
+High-value Markdown docs:
 
 ```text
-data/site.json
+AGENTS.md                   AI/editor instructions for future site agents
+ROADMAP.md                  Site roadmap and next slices
+CONTENT-GUIDE.md            Voice, tone, compliance, and copy rules
+COMPLIANCE.md               Funding language guardrails
+MARKDOWN-USAGE.md           How Markdown docs should be used in this repo
+.github/workflows/*.yml     GitHub Actions quality checks
 ```
+
+## Markdown Strategy
+
+Markdown files are useful for **instructions, planning, and source-of-truth docs**. They are not currently rendered as public web pages.
+
+Use Markdown for:
+
+- AI agent instructions
+- Site roadmap
+- Copy guidelines
+- Compliance rules
+- Manual QA checklist
+- Future page specs
+- Launch checklist
+
+Use HTML for:
+
+- Public web pages
+- Landing pages
+- Embedded forms
+- Conversion sections
+
+## `AGENTS.md` Strategy
+
+`AGENTS.md` should tell AI coding assistants and future contributors how to work in this repo:
+
+- Keep vanilla static.
+- No Next.js unless explicitly approved.
+- No external fonts/libraries unless approved.
+- Preserve compliance language.
+- Do not mention backend partners unless approved.
+- Keep CTAs routed through `apply.html`, `partner.html`, or `/go/funding-application`.
+- Avoid lender claims or guaranteed funding language.
+
+An `agents.html` public page is different. That would be a marketing page for actual human funding partners/agents. For this repo, `partner.html` already serves that role. Create `agents.html` only if K & J Industries wants a public “agent resources” or “partner portal teaser” page later.
 
 ## SEO Checklist
 
-Before deploying publicly:
+Before custom-domain launch:
 
-- Replace canonical placeholder with the final domain.
-- Add a real Open Graph image and update `index.html`.
-- Confirm meta title is under roughly 60 characters.
-- Confirm meta description is under roughly 160 characters.
-- Add final business contact email.
-- Add city/state only if the agency wants local positioning.
-- Confirm the page has only one H1.
-- Confirm all navigation anchors work.
-- Confirm final copy does not make lender claims.
+- Replace canonical placeholders with the final domain.
+- Add `og-image.jpg` at repo root.
+- Confirm meta titles and descriptions on all pages.
+- Confirm only one H1 per page.
+- Confirm all internal links work.
+- Add `privacy.html` if collecting form submissions.
+- Add local city/state only if K & J wants local SEO positioning.
 
 ## Performance Checklist
 
-This site is intentionally performance-light.
-
-Before launch:
-
-- Keep images out unless needed.
-- If adding images, compress them before committing.
-- Avoid external fonts unless the project moves past visual approval.
-- Keep JSON small and human-editable.
-- Test mobile layout at 375px width.
-- Run Lighthouse or Chrome DevTools performance audit.
+- Keep images compressed.
+- Keep Darwin headshot under ~300 KB if possible.
+- Keep `og-image.jpg` under ~500 KB if possible.
+- Avoid external fonts.
+- Avoid new JavaScript dependencies.
+- Test on mobile width even if desktop is the current priority.
 - Confirm no console errors.
 
 ## Accessibility Checklist
@@ -182,14 +286,14 @@ Included basics:
 - Accessible mobile nav toggle.
 - FAQ buttons with `aria-expanded`.
 - Reduced-motion support.
-- Good contrast against dark background.
+- Strong dark-background contrast.
 
 Before launch:
 
 - Test tab order.
-- Confirm focus states are visible.
-- Confirm all CTA links are descriptive.
-- Confirm content is readable on mobile.
+- Confirm Tally embed is usable with keyboard.
+- Confirm CTA links are descriptive.
+- Confirm page headings follow a logical order.
 
 ## Compliance Notes
 
@@ -199,32 +303,33 @@ Required disclaimer:
 K & J Industries is not a lender and does not guarantee approvals, terms, funding amounts, or timelines. Services are referral and relationship-based through trusted funding partners.
 ```
 
-Avoid adding language that says or implies:
+Avoid language that says or implies:
 
 - Guaranteed approval
 - Guaranteed funding
 - Guaranteed rates or terms
-- Same-day funding guarantees
+- Guaranteed same-day funding
 - K & J Industries directly funds deals
 - K & J Industries is a lender
-- Named backend funding partners unless intentionally approved later
+- Specific lender claims
+- Named backend funding partners unless intentionally approved
 
-Use language like:
+Preferred language:
 
-- "trusted funding partners"
-- "funding conversations"
-- "funding access"
-- "relationship-based"
-- "may connect"
-- "when appropriate"
+- Funding conversations
+- Funding access
+- Trusted funding partners
+- May connect
+- When appropriate
+- Review path
+- Partner-fit direction
+- Funding readiness
 
 ## Troubleshooting
 
-### The page is blank or content does not load
+### Page content does not load locally
 
-Cause: You opened `index.html` directly.
-
-Fix:
+Run a server:
 
 ```bash
 python3 -m http.server 8080
@@ -236,52 +341,47 @@ Then open:
 http://localhost:8080
 ```
 
-### JSON error in console
+### Tally form is too tall or too short
 
-Cause: Invalid JSON, usually a missing comma, extra comma, or unescaped quote.
-
-Fix:
-
-- Validate `data/site.json`.
-- Validate `data/sections.json`.
-- Use a JSON formatter or validator.
-
-### Styles are not loading
-
-Check that these files exist:
+Edit iframe height and CSS in:
 
 ```text
-css/tokens.css
-css/components.css
-css/styles.css
+apply.html
+partner.html
+css/pages.css
 ```
 
-Also confirm paths in `index.html` have not changed.
+The current form embed uses Tally dynamic height plus a CSS minimum height. Do not set a massive minimum height unless the form truly needs it.
 
-### CTA opens the wrong email
+### Partner CTA opens email
 
-Edit:
+Search for stale mailto links:
+
+```bash
+grep -R "Become a Partner.*mailto" .
+```
+
+Partner CTAs should point to:
 
 ```text
-data/site.json
-```
-
-Specifically:
-
-```json
-"cta": {
-  "label": "Start a Funding Conversation",
-  "href": "mailto:hello@kjindustriesfunding.com?subject=Funding%20Conversation%20with%20K%20%26%20J%20Industries"
-}
+partner.html
 ```
 
 ### Vercel deploy tries to build
 
-Use:
+Use No Framework / Other. Leave install, build, and output settings blank/root.
 
-- Framework preset: Other / No Framework
-- Build command: blank
-- Install command: blank
-- Output directory: blank or root
+### Cache looks stale
 
-This repo has no `package.json` because it does not need one.
+Hard refresh:
+
+```text
+Ctrl + Shift + R
+```
+
+CSS and JS files use versioned URLs in some places. Increment query strings if needed:
+
+```text
+css/motion.css?v=2
+js/effects.js?v=2
+```
