@@ -12,8 +12,8 @@
     "canonical": "https://kjindustriesfunding.com/"
   },
   "cta": {
-    "label": "Start a Funding Conversation",
-    "href": "mailto:hello@kjindustriesfunding.com?subject=Funding%20Conversation%20with%20K%20%26%20J%20Industries"
+    "label": "Apply for Funding",
+    "href": "/go/funding-application"
   },
   "hero": {
     "eyebrow": "Family-led funding access for business owners",
@@ -24,15 +24,15 @@
   "metrics": [
     {
       "value": "01",
-      "label": "Clarify the business goal before chasing options."
+      "label": "Know your target amount and funding use case."
     },
     {
       "value": "02",
-      "label": "Review readiness and the funding conversation."
+      "label": "Share monthly revenue range and basic business details."
     },
     {
       "value": "03",
-      "label": "Connect through trusted funding partners when appropriate."
+      "label": "Move toward the right funding partner conversation."
     }
   ],
   "disclaimer": "K & J Industries is not a lender and does not guarantee approvals, terms, funding amounts, or timelines. Services are referral and relationship-based through trusted funding partners."
