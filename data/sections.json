@@ -1,0 +1,134 @@
+{
+  "snapshot": {
+    "eyebrow": "Funding access snapshot",
+    "title": "A clearer front door for business funding conversations.",
+    "intro": "Most business owners do not need another noisy promise. They need a practical first step, a clean conversation, and a trusted path forward.",
+    "items": [
+      "Relationship-first guidance for main-street business owners.",
+      "Funding readiness conversations before unnecessary applications.",
+      "Referral access through trusted funding partners.",
+      "Plain-English communication without inflated claims or pressure tactics."
+    ]
+  },
+  "services": {
+    "eyebrow": "What we help with",
+    "title": "Practical funding conversations for operators doing real work.",
+    "intro": "K & J Industries is built for business owners who need clarity around the next move, not financial theater wearing a rented suit.",
+    "items": [
+      {
+        "icon": "$",
+        "title": "Operating cash flow",
+        "text": "Start a conversation around short-term business needs, working capital pressure, and operational timing."
+      },
+      {
+        "icon": "↗",
+        "title": "Expansion conversations",
+        "text": "Discuss growth plans, new opportunities, equipment needs, staffing, inventory, or location-related funding questions."
+      },
+      {
+        "icon": "✓",
+        "title": "Funding readiness",
+        "text": "Clarify basic business details before jumping into partner conversations, so owners know what they may need to prepare."
+      },
+      {
+        "icon": "◎",
+        "title": "Trusted partner access",
+        "text": "When appropriate, get connected with trusted funding partners who can review the opportunity directly."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Simple process",
+    "title": "Three steps. No circus. No smoke machine.",
+    "intro": "A clean process helps business owners avoid wasting time, sending the wrong information, or chasing options that do not fit.",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Share your business goal",
+        "text": "Tell us what you are trying to accomplish, what kind of business you operate, and what timing matters most."
+      },
+      {
+        "number": "2",
+        "title": "Clarify the funding need",
+        "text": "We help frame the conversation around use case, readiness, urgency, and possible partner-fit direction."
+      },
+      {
+        "number": "3",
+        "title": "Get connected",
+        "text": "If it makes sense, we help you move toward a trusted funding partner conversation with clearer expectations."
+      }
+    ]
+  },
+  "standards": {
+    "eyebrow": "Professional standards",
+    "title": "Trust is the asset. Everything else is paperwork.",
+    "intro": "K & J Industries is intentionally starting lean, relationship-driven, and clear about its role. That is a feature, not a bug.",
+    "items": [
+      {
+        "title": "No guaranteed approval language",
+        "text": "We do not promise approvals, funding amounts, rates, terms, or timelines."
+      },
+      {
+        "title": "Clear role definition",
+        "text": "K & J Industries is a funding access and referral relationship, not a direct lender."
+      },
+      {
+        "title": "Human communication",
+        "text": "Business owners deserve clear expectations, respectful follow-up, and plain-English next steps."
+      },
+      {
+        "title": "Partner-based fulfillment",
+        "text": "Funding-related services are handled through trusted funding partners when a conversation appears appropriate."
+      }
+    ]
+  },
+  "family": {
+    "eyebrow": "Family-led agency",
+    "title": "A small team, built around real conversations.",
+    "intro": "K & J Industries is a new family-led funding access agency. The point is not to pretend to be a giant institution. The point is to help business owners start a better conversation.",
+    "team": [
+      {
+        "role": "Founding Partner",
+        "title": "Relationship-first funding guidance",
+        "text": "Focused on helping business owners clarify their goals, understand the conversation, and move toward trusted partner access when appropriate."
+      },
+      {
+        "role": "Client Experience Partner",
+        "title": "Support, follow-up, and owner communication",
+        "text": "Built around the kind of steady, respectful communication business owners should expect when money, timing, and decisions matter."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Clear answers before the funding rodeo starts.",
+    "intro": "A few plain-English answers so business owners know what this site is, and what it is not.",
+    "items": [
+      {
+        "question": "Is K & J Industries a lender?",
+        "answer": "No. K & J Industries is not a lender. The agency helps business owners start clearer funding conversations and may connect them with trusted funding partners when appropriate."
+      },
+      {
+        "question": "Can you guarantee approval or funding?",
+        "answer": "No. K & J Industries does not guarantee approvals, terms, funding amounts, or timelines. Any review depends on the business, documentation, partner criteria, and other factors."
+      },
+      {
+        "question": "Who is this for?",
+        "answer": "This is for main-street business owners, contractors, operators, service businesses, local founders, and entrepreneurs who want a clearer first step around funding access."
+      },
+      {
+        "question": "What happens after I reach out?",
+        "answer": "The first step is a conversation. The goal is to understand your business need, clarify the situation, and determine whether a trusted partner conversation may make sense."
+      },
+      {
+        "question": "Why keep the site simple?",
+        "answer": "Because this is a fast credibility and reference page. The priority is clarity, trust, and a lightweight first impression before building anything more complex."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Start here",
+    "title": "Ready to make the funding conversation less confusing?",
+    "text": "Send a quick note and start with the business goal. K & J Industries will help you clarify the next step without pretending every path is a magic money button."
+  }
+}
