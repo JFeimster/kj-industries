@@ -1,0 +1,50 @@
+:root {
+  color-scheme: dark;
+
+  --color-bg: #080807;
+  --color-bg-soft: #10100e;
+  --color-bg-elevated: #15130f;
+  --color-card: rgba(22, 20, 16, 0.78);
+  --color-card-strong: rgba(28, 25, 18, 0.92);
+
+  --color-gold: #d4af37;
+  --color-gold-soft: #f0d982;
+  --color-gold-deep: #8f701d;
+
+  --color-parchment: #f5ecd9;
+  --color-parchment-soft: #d8cdb7;
+  --color-muted: #a99d88;
+  --color-subtle: #756c5b;
+
+  --color-border: rgba(245, 236, 217, 0.13);
+  --color-border-strong: rgba(212, 175, 55, 0.35);
+
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.38);
+  --shadow-gold: 0 0 34px rgba(212, 175, 55, 0.13);
+
+  --radius-xs: 0.55rem;
+  --radius-sm: 0.85rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.8rem;
+  --radius-xl: 2.35rem;
+
+  --container: 1160px;
+  --container-pad: clamp(1rem, 3vw, 2rem);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Georgia, Cambria, "Times New Roman", serif;
+
+  --step--1: clamp(0.82rem, 0.78rem + 0.18vw, 0.94rem);
+  --step-0: clamp(0.96rem, 0.91rem + 0.22vw, 1.08rem);
+  --step-1: clamp(1.08rem, 1rem + 0.38vw, 1.3rem);
+  --step-2: clamp(1.35rem, 1.19rem + 0.8vw, 1.85rem);
+  --step-3: clamp(1.75rem, 1.42rem + 1.65vw, 2.75rem);
+  --step-4: clamp(2.35rem, 1.76rem + 2.95vw, 4.25rem);
+
+  --tracking-wide: 0.12em;
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --speed-fast: 160ms;
+  --speed: 260ms;
+  --speed-slow: 650ms;
+}
